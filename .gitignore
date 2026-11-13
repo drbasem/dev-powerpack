@@ -1,0 +1,6 @@
+HANDOFF.md
+graphify-out/
+strix_runs/
+.env
+*.local.json
+desktop.ini

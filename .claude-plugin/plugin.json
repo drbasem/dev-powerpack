@@ -1,0 +1,14 @@
+{
+  "name": "dev-powerpack",
+  "version": "0.1.0",
+  "description": "One hybrid skill: senior-engineer lifecycle (spec → plan → build → test → review → secure → ship) wired to Context7 docs, Graphify code graphs, 21st UI components and Strix AI pentesting.",
+  "author": {
+    "name": "Dr. Basem M. ElHalawany",
+    "url": "https://github.com/drbasem"
+  },
+  "homepage": "https://github.com/drbasem/dev-powerpack",
+  "repository": "https://github.com/drbasem/dev-powerpack",
+  "license": "MIT",
+  "skills": "./skills",
+  "keywords": ["skills", "claude-code", "context7", "graphify", "21st", "strix", "tdd", "code-review", "security"]
+}

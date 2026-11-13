@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "dev-powerpack",
+  "description": "Hybrid engineering workflow skill for AI coding agents.",
+  "owner": {
+    "name": "Dr. Basem M. ElHalawany",
+    "url": "https://github.com/drbasem"
+  },
+  "plugins": [
+    {
+      "name": "dev-powerpack",
+      "version": "0.1.0",
+      "source": "./",
+      "description": "Lifecycle discipline + Context7 + Graphify + 21st + Strix in one skill.",
+      "homepage": "https://github.com/drbasem/dev-powerpack",
+      "license": "MIT",
+      "keywords": ["skills", "engineering", "context7", "graphify", "21st", "strix"]
+    }
+  ]
+}
