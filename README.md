@@ -1,6 +1,6 @@
 # dev-powerpack
 
-**One skill that makes your AI coding agent work like a senior engineer — and gives it four power tools.**
+**One skill that makes your AI coding agent work like a senior engineer — and gives it a set of power tools.**
 
 [العربية](README.ar.md)
 
@@ -13,7 +13,7 @@ Five excellent open-source projects each solve one piece of the AI-coding puzzle
   Graphify  Graphify  Context7 + 21st     Graphify (impact)
 ```
 
-## The five ingredients
+## The six ingredients
 
 | Project | Problem it solves | Role in dev-powerpack |
 |---|---|---|
@@ -22,6 +22,7 @@ Five excellent open-source projects each solve one piece of the AI-coding puzzle
 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | Agents burn context grepping file after file | Map the repo into a local knowledge graph; query paths, dependencies and blast radius instead of reading everything |
 | [21st-dev/magic-mcp](https://github.com/21st-dev/magic-mcp) (21st MCP) | AI-built UIs look generic | Start UI work from a curated component, then adapt it to the project's design tokens |
 | [usestrix/strix](https://github.com/usestrix/strix) | Static scanners flood you with false positives | Autonomous pentest of *your own* app with working proofs-of-concept; fix → re-scan loop; CI gate |
+| [SnailSploit/claude-red](https://github.com/SnailSploit/claude-red) | Automated scans miss depth on specific attack surfaces | ~78 offensive-security playbooks (web, AD, cloud, wireless, exploit dev…) for *authorized* red-team/CTF work — expert method for manual, deep testing |
 
 Every tool is **optional**. If one is missing, the skill falls back (official docs, Grep, hand-written UI, manual security checklist) and never blocks.
 
@@ -37,7 +38,7 @@ Every tool is **optional**. If one is missing, the skill falls back (official do
 - Runs a security checklist and (on owned targets only) a Strix scan before shipping.
 - Ends with a definition-of-done checklist and an updated `HANDOFF.md`.
 
-Shortcuts you can type: `/spec` `/plan` `/build` `/test` `/review` `/secure` `/ship` `/docs <lib>` `/graph` `/ui <what>`.
+Shortcuts you can type: `/spec` `/plan` `/build` `/test` `/review` `/secure` `/ship` `/docs <lib>` `/graph` `/ui <what>` `/pentest` `/redteam <surface>`.
 
 ## Install the skill
 
@@ -54,7 +55,7 @@ npx skills add drbasem/dev-powerpack
 
 **Manual:** copy `skills/dev-powerpack/` into `~/.claude/skills/` (or your agent's skills folder).
 
-## Install the four tools (optional, recommended)
+## Install the tools (optional, recommended)
 
 Full steps, including Windows notes: [`skills/dev-powerpack/references/setup.md`](skills/dev-powerpack/references/setup.md).
 
@@ -64,6 +65,7 @@ Full steps, including Windows notes: [`skills/dev-powerpack/references/setup.md`
 | Graphify | `uv tool install graphifyy` then `graphify .` in a project | none (code parsing is fully local) |
 | 21st MCP | `npx @21st-dev/cli@latest init --client claude` | required — 21st.dev/mcp |
 | Strix | `uv tool install strix-agent` (+ Docker running) | LLM API key |
+| claude-red | `git clone https://github.com/SnailSploit/claude-red ~/.claude/skills/claude-red` | none |
 
 Keep all keys in environment variables — never in code or chat.
 
@@ -79,17 +81,18 @@ skills/dev-powerpack/
     graphify.md          code-graph workflow
     ui-21st.md           UI component workflow
     security-strix.md    hardening checklist + Strix pentest/fix loop
-    setup.md             installing the four tools
+    redteam-claude-red.md  authorized red-team playbooks (claude-red)
+    setup.md             installing the tools
     NOTICE.md            sources and licenses
 ```
 
 ## Responsible use
 
-Strix performs real attacks. Only scan code, apps and domains you own or are explicitly authorized to test.
+Strix and the claude-red playbooks perform real attacks. Only use them on code, apps and systems you own or are explicitly authorized to test — within an authorized engagement, bug-bounty scope, CTF, or your own research. Confirm scope before any offensive step.
 
 ## Credits
 
-This project is a rewritten synthesis, not a fork. All credit for the underlying ideas and tools goes to their authors: Addy Osmani and contributors (agent-skills, MIT), Upstash (Context7, MIT), Graphify Labs (Apache-2.0), 21st.dev (ISC), and the Strix team (Apache-2.0). Each tool is installed from its own source and governed by its own license and terms.
+This project is a rewritten synthesis, not a fork. All credit for the underlying ideas and tools goes to their authors: Addy Osmani and contributors (agent-skills, MIT), Upstash (Context7, MIT), Graphify Labs (Apache-2.0), 21st.dev (ISC), the Strix team (Apache-2.0), and SnailSploit (claude-red, MIT). Each tool is installed from its own source and governed by its own license and terms.
 
 ## Author
 

@@ -1,6 +1,6 @@
-# One-time setup of the four tools (Windows-friendly)
+# One-time setup of the tools (Windows-friendly)
 
-All four are optional; the skill works without any of them (it falls back to official docs, Grep, hand-written UI, and the manual security checklist). Keys go in **user environment variables**, never in code or chat.
+All are optional; the skill works without any of them (it falls back to official docs, Grep, hand-written UI, and the manual security checklist). Keys go in **user environment variables**, never in code or chat.
 
 ## Context7 (docs) — free key at context7.com/dashboard
 
@@ -38,6 +38,13 @@ claude mcp add --transport http 21st https://21st.dev/api/mcp --header "x-api-ke
 pipx install strix-agent       # or: uv tool install strix-agent ; on WSL/Linux: curl -sSL https://strix.ai/install | bash
 ```
 Set `STRIX_LLM` (e.g. `anthropic/claude-sonnet-5-5`) and `LLM_API_KEY` as user env vars. First run pulls the sandbox Docker image.
+
+## claude-red (offensive-security playbooks) — no key, authorized use only
+
+```bash
+git clone https://github.com/SnailSploit/claude-red ~/.claude/skills/claude-red
+```
+Installs as its own `claude-red` skill folder; its ~78 playbooks load on demand by trigger. Windows: run in Git Bash. Only use on targets you own or are authorized to test (see references/redteam-claude-red.md).
 
 ## Setting env vars on Windows (PowerShell, persists for the user)
 

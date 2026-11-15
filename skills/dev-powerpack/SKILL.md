@@ -1,6 +1,6 @@
 ---
 name: dev-powerpack
-description: Hybrid software-engineering workflow for any coding project. Combines a senior-engineer lifecycle (spec, plan, incremental build, TDD, five-axis review, ship — from addyosmani/agent-skills) with four power tools — Context7 for up-to-date library docs, Graphify for a knowledge graph of the codebase, 21st.dev MCP for ready-made UI components, and Strix for AI penetration testing. Use whenever building a feature, starting or planning a project, fixing a bug, writing code against any library or framework, exploring an unfamiliar codebase, building UI/front-end components, reviewing code, hardening security, pentesting your own app, or preparing to ship. Also trigger on "/spec", "/plan", "/build", "/test", "/review", "/ship", "use context7", "graphify", "21st", "strix", "pentest", "security scan".
+description: Hybrid software-engineering workflow for any coding project. Combines a senior-engineer lifecycle (spec, plan, incremental build, TDD, five-axis review, ship — from addyosmani/agent-skills) with power tools — Context7 for up-to-date library docs, Graphify for a knowledge graph of the codebase, 21st.dev MCP for ready-made UI components, Strix for AI penetration testing, and claude-red offensive-security playbooks for authorized red-team/CTF work. Use whenever building a feature, starting or planning a project, fixing a bug, writing code against any library or framework, exploring an unfamiliar codebase, building UI/front-end components, reviewing code, hardening security, pentesting or red-teaming your own app, or preparing to ship. Also trigger on "/spec", "/plan", "/build", "/test", "/review", "/ship", "/pentest", "/redteam", "use context7", "graphify", "21st", "strix", "pentest", "red team", "security scan".
 ---
 
 # Dev Powerpack
@@ -23,6 +23,7 @@ One skill that runs a disciplined engineering lifecycle and calls the right tool
    - Graphify: `graphify` CLI, or `graphify-out/graph.json` already in the repo
    - 21st: MCP tools `search` / `get_component` / `generate`
    - Strix: `strix` CLI + Docker running
+   - claude-red: `claude-red` skill folder present (offensive-security playbooks, loads by trigger)
    Setup for each: [references/setup.md](references/setup.md).
 4. If the codebase is unfamiliar or large (> ~30 files) and Graphify is available, build or update the graph first — see [references/graphify.md](references/graphify.md).
 
@@ -38,9 +39,10 @@ One skill that runs a disciplined engineering lifecycle and calls the right tool
 | Bug / failing test | Reproduce with a test → root cause → fix → regression test | [lifecycle.md § Debug](references/lifecycle.md#debug) |
 | Review a diff / PR | Five-axis review + graph impact check | [lifecycle.md § Review](references/lifecycle.md#6-review-five-axes) |
 | Auth, input handling, payments, APIs, before release | Security checklist, then Strix scan | [security-strix.md](references/security-strix.md) |
+| Authorized pentest / red-team / CTF — deep manual work on one attack surface | Confirm scope, then load the matching claude-red playbook | [redteam-claude-red.md](references/redteam-claude-red.md) |
 | Ready to release | Ship checklist | [lifecycle.md § Ship](references/lifecycle.md#8-ship) |
 
-Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/review`, `/secure`, `/ship`, `/docs <lib>`, `/graph`, `/ui <what>` — map each to the matching row above.
+Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/review`, `/secure`, `/ship`, `/docs <lib>`, `/graph`, `/ui <what>`, `/pentest` or `/redteam <surface>` — map each to the matching row above.
 
 ## Non-negotiable behaviors (apply in every phase)
 
@@ -52,7 +54,7 @@ Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/
 6. **Simplest thing that works.** No abstractions before the third use case; no speculative features.
 7. **Touch only what the task needs.** No drive-by refactors; mention them instead.
 8. **Report honestly.** Say what was verified, what wasn't, and what failed — with the output.
-9. **Security scans only on targets the user owns or is authorized to test.** Never point Strix at third-party sites.
+9. **Offensive work only on targets the user owns or is authorized to test.** Never point Strix or any claude-red playbook at third-party systems; confirm scope first.
 10. **Secrets stay out of code and chat.** API keys (Context7, 21st, LLM keys for Strix) live in environment variables.
 
 ## Definition of done (any change)
@@ -67,4 +69,4 @@ Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/
 
 ## Sources and credits
 
-Condensed and combined from: addyosmani/agent-skills (MIT), upstash/context7 (MIT), Graphify-Labs/graphify (Apache-2.0), 21st-dev/magic-mcp (21st MCP), usestrix/strix (Apache-2.0). See [references/NOTICE.md](references/NOTICE.md).
+Condensed and combined from: addyosmani/agent-skills (MIT), upstash/context7 (MIT), Graphify-Labs/graphify (Apache-2.0), 21st-dev/magic-mcp (ISC), usestrix/strix (Apache-2.0), SnailSploit/claude-red (MIT). See [references/NOTICE.md](references/NOTICE.md).
