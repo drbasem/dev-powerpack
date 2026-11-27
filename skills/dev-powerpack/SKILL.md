@@ -1,6 +1,6 @@
 ---
 name: dev-powerpack
-description: Hybrid software-engineering workflow for any coding project. Combines a senior-engineer lifecycle (spec, plan, incremental build, TDD, five-axis review, ship — from addyosmani/agent-skills) with power tools — Context7 for up-to-date library docs, Graphify for a knowledge graph of the codebase, 21st.dev MCP for ready-made UI components, Strix for AI penetration testing, and claude-red offensive-security playbooks for authorized red-team/CTF work. Use whenever building a feature, starting or planning a project, fixing a bug, writing code against any library or framework, exploring an unfamiliar codebase, building UI/front-end components, reviewing code, hardening security, pentesting or red-teaming your own app, or preparing to ship. Also trigger on "/spec", "/plan", "/build", "/test", "/review", "/ship", "/pentest", "/redteam", "use context7", "graphify", "21st", "strix", "pentest", "red team", "security scan".
+description: Hybrid software-engineering workflow for any coding project. Combines a senior-engineer lifecycle (spec, plan, incremental build, TDD, five-axis review, ship — from addyosmani/agent-skills) with power tools — Context7 for up-to-date library docs, Graphify for a knowledge graph of the codebase, 21st.dev MCP for ready-made UI components, Strix for AI penetration testing, claude-red offensive-security playbooks for authorized red-team/CTF work, and app-store-compliance for catching App Store / Google Play rejections before submitting a mobile app. Use whenever building a feature, starting or planning a project, fixing a bug, writing code against any library or framework, exploring an unfamiliar codebase, building UI/front-end components, reviewing code, hardening security, pentesting or red-teaming your own app, submitting or releasing an iOS/Android app, or preparing to ship. Also trigger on "/spec", "/plan", "/build", "/test", "/review", "/ship", "/pentest", "/redteam", "/appstore", "/compliance", "use context7", "graphify", "21st", "strix", "pentest", "red team", "security scan", "App Store rejection", "Google Play rejection", "mobile app submission".
 ---
 
 # Dev Powerpack
@@ -24,6 +24,7 @@ One skill that runs a disciplined engineering lifecycle and calls the right tool
    - 21st: MCP tools `search` / `get_component` / `generate`
    - Strix: `strix` CLI + Docker running
    - claude-red: `claude-red` skill folder present (offensive-security playbooks, loads by trigger)
+   - app-store-compliance (mobile apps only): guard script at `~/repositories/app-store-compliance`, or the `app-store-compliance` skill
    Setup for each: [references/setup.md](references/setup.md).
 4. If the codebase is unfamiliar or large (> ~30 files) and Graphify is available, build or update the graph first — see [references/graphify.md](references/graphify.md).
 
@@ -40,9 +41,10 @@ One skill that runs a disciplined engineering lifecycle and calls the right tool
 | Review a diff / PR | Five-axis review + graph impact check | [lifecycle.md § Review](references/lifecycle.md#6-review-five-axes) |
 | Auth, input handling, payments, APIs, before release | Security checklist, then Strix scan | [security-strix.md](references/security-strix.md) |
 | Authorized pentest / red-team / CTF — deep manual work on one attack surface | Confirm scope, then load the matching claude-red playbook | [redteam-claude-red.md](references/redteam-claude-red.md) |
-| Ready to release | Ship checklist | [lifecycle.md § Ship](references/lifecycle.md#8-ship) |
+| Submitting a mobile app to the App Store / Google Play (or after a rejection) | Run the pre-submission guard, clear every critical before release | [mobile-compliance.md](references/mobile-compliance.md) |
+| Ready to release | Ship checklist (mobile: + compliance guard) | [lifecycle.md § Ship](references/lifecycle.md#8-ship) |
 
-Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/review`, `/secure`, `/ship`, `/docs <lib>`, `/graph`, `/ui <what>`, `/pentest` or `/redteam <surface>` — map each to the matching row above.
+Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/review`, `/secure`, `/ship`, `/docs <lib>`, `/graph`, `/ui <what>`, `/pentest` or `/redteam <surface>`, `/appstore` or `/compliance` (mobile) — map each to the matching row above.
 
 ## Non-negotiable behaviors (apply in every phase)
 
@@ -69,4 +71,4 @@ Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/
 
 ## Sources and credits
 
-Condensed and combined from: addyosmani/agent-skills (MIT), upstash/context7 (MIT), Graphify-Labs/graphify (Apache-2.0), 21st-dev/magic-mcp (ISC), usestrix/strix (Apache-2.0), SnailSploit/claude-red (MIT). See [references/NOTICE.md](references/NOTICE.md).
+Condensed and combined from: addyosmani/agent-skills (MIT), upstash/context7 (MIT), Graphify-Labs/graphify (Apache-2.0), 21st-dev/magic-mcp (ISC), usestrix/strix (Apache-2.0), SnailSploit/claude-red (MIT), mjmirza/app-store-compliance (OpenRoots ORA 2.3). See [references/NOTICE.md](references/NOTICE.md).

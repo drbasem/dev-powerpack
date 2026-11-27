@@ -46,6 +46,13 @@ git clone https://github.com/SnailSploit/claude-red ~/.claude/skills/claude-red
 ```
 Installs as its own `claude-red` skill folder; its ~78 playbooks load on demand by trigger. Windows: run in Git Bash. Only use on targets you own or are authorized to test (see references/redteam-claude-red.md).
 
+## app-store-compliance (mobile release guard) — no key, mobile apps only
+
+```bash
+git clone https://github.com/mjmirza/app-store-compliance ~/repositories/app-store-compliance
+```
+Run the guard before submitting: `bash ~/repositories/app-store-compliance/agent-os/hooks/app-store-compliance-guard.sh "/path/to/app"`. Windows: Git Bash. It installs nothing and changes nothing in your app. `git pull` the repo occasionally so its rule pack stays fresh. See references/mobile-compliance.md.
+
 ## Setting env vars on Windows (PowerShell, persists for the user)
 
 ```powershell

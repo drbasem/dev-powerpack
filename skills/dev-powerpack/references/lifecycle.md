@@ -87,6 +87,7 @@ Pre-launch checklist:
 
 - [ ] Full test suite + lint + type-check green; release build succeeds
 - [ ] Security: checklist done, Strix scan clean (or findings triaged), dependencies audited (`npm audit`, `pip-audit`, `flutter pub outdated` …)
+- [ ] **Mobile app?** App Store / Play pre-submission guard run and every `[CRITICAL]` cleared; demo account works, privacy declaration matches runtime SDK use — see [mobile-compliance.md](mobile-compliance.md)
 - [ ] Config/secrets via environment, not committed; debug flags off
 - [ ] Observability: errors logged with context; crash reporting / health check in place where relevant
 - [ ] Version number and changelog updated

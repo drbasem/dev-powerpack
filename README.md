@@ -13,7 +13,7 @@ Five excellent open-source projects each solve one piece of the AI-coding puzzle
   Graphify  Graphify  Context7 + 21st     Graphify (impact)
 ```
 
-## The six ingredients
+## The seven ingredients
 
 | Project | Problem it solves | Role in dev-powerpack |
 |---|---|---|
@@ -23,6 +23,7 @@ Five excellent open-source projects each solve one piece of the AI-coding puzzle
 | [21st-dev/magic-mcp](https://github.com/21st-dev/magic-mcp) (21st MCP) | AI-built UIs look generic | Start UI work from a curated component, then adapt it to the project's design tokens |
 | [usestrix/strix](https://github.com/usestrix/strix) | Static scanners flood you with false positives | Autonomous pentest of *your own* app with working proofs-of-concept; fix → re-scan loop; CI gate |
 | [SnailSploit/claude-red](https://github.com/SnailSploit/claude-red) | Automated scans miss depth on specific attack surfaces | ~78 offensive-security playbooks (web, AD, cloud, wireless, exploit dev…) for *authorized* red-team/CTF work — expert method for manual, deep testing |
+| [mjmirza/app-store-compliance](https://github.com/mjmirza/app-store-compliance) | Mobile apps get rejected on the same preventable causes, costing a week each | Pre-submission guard for iOS/Android: 125+ rejection patterns mapped to the exact guideline + fix; catches them before App Store / Play review does |
 
 Every tool is **optional**. If one is missing, the skill falls back (official docs, Grep, hand-written UI, manual security checklist) and never blocks.
 
@@ -36,9 +37,10 @@ Every tool is **optional**. If one is missing, the skill falls back (official do
 - Writes the failing test first; never weakens a test to make it pass.
 - Reviews on five axes: correctness, readability, architecture, security, performance.
 - Runs a security checklist and (on owned targets only) a Strix scan before shipping.
+- For a mobile release, runs the App Store / Play pre-submission guard and clears every critical first.
 - Ends with a definition-of-done checklist and an updated `HANDOFF.md`.
 
-Shortcuts you can type: `/spec` `/plan` `/build` `/test` `/review` `/secure` `/ship` `/docs <lib>` `/graph` `/ui <what>` `/pentest` `/redteam <surface>`.
+Shortcuts you can type: `/spec` `/plan` `/build` `/test` `/review` `/secure` `/ship` `/docs <lib>` `/graph` `/ui <what>` `/pentest` `/redteam <surface>` `/appstore`.
 
 ## Install the skill
 
@@ -66,6 +68,7 @@ Full steps, including Windows notes: [`skills/dev-powerpack/references/setup.md`
 | 21st MCP | `npx @21st-dev/cli@latest init --client claude` | required — 21st.dev/mcp |
 | Strix | `uv tool install strix-agent` (+ Docker running) | LLM API key |
 | claude-red | `git clone https://github.com/SnailSploit/claude-red ~/.claude/skills/claude-red` | none |
+| app-store-compliance | `git clone https://github.com/mjmirza/app-store-compliance ~/repositories/app-store-compliance` | none |
 
 Keep all keys in environment variables — never in code or chat.
 
@@ -82,6 +85,7 @@ skills/dev-powerpack/
     ui-21st.md           UI component workflow
     security-strix.md    hardening checklist + Strix pentest/fix loop
     redteam-claude-red.md  authorized red-team playbooks (claude-red)
+    mobile-compliance.md   App Store / Play pre-submission guard
     setup.md             installing the tools
     NOTICE.md            sources and licenses
 ```
@@ -92,7 +96,7 @@ Strix and the claude-red playbooks perform real attacks. Only use them on code, 
 
 ## Credits
 
-This project is a rewritten synthesis, not a fork. All credit for the underlying ideas and tools goes to their authors: Addy Osmani and contributors (agent-skills, MIT), Upstash (Context7, MIT), Graphify Labs (Apache-2.0), 21st.dev (ISC), the Strix team (Apache-2.0), and SnailSploit (claude-red, MIT). Each tool is installed from its own source and governed by its own license and terms.
+This project is a rewritten synthesis, not a fork. All credit for the underlying ideas and tools goes to their authors: Addy Osmani and contributors (agent-skills, MIT), Upstash (Context7, MIT), Graphify Labs (Apache-2.0), 21st.dev (ISC), the Strix team (Apache-2.0), SnailSploit (claude-red, MIT), and mjmirza (app-store-compliance, OpenRoots ORA 2.3). Each tool is installed from its own source and governed by its own license and terms.
 
 ## Author
 
