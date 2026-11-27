@@ -19,7 +19,7 @@
 
 <div dir="rtl">
 
-## المكوّنات السبعة
+## المكوّنات التسعة
 
 | المشروع | المشكلة التي يحلها | دوره في المهارة |
 |---|---|---|
@@ -27,6 +27,8 @@
 | [upstash/context7](https://github.com/upstash/context7) | النماذج تكتب كودًا من بيانات تدريب قديمة وتخترع دوالًا غير موجودة | قبل استخدام أي مكتبة: جلب التوثيق الحالي الخاص بالإصدار والاستشهاد به |
 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | الوكيل يستهلك السياق في البحث ملفًا بعد ملف | تحويل المشروع إلى خريطة معرفية محلية والاستعلام عنها بدل قراءة كل شيء |
 | [21st-dev/magic-mcp](https://github.com/21st-dev/magic-mcp) | واجهات الذكاء الاصطناعي تبدو متشابهة وعامة | البدء من مكوّن واجهة جاهز ومُتقن ثم تكييفه مع تصميم المشروع |
+| [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | قرارات التصميم تُترك للإعدادات الافتراضية | ذكاء تصميم قابل للبحث: 80 نمطًا، 194 لوحة ألوان، 74 اقتران خطوط، 141 إرشاد UX، وقواعد وصول وحركة |
+| [sumi](https://github.com/phazurlabs/sumi) | "الإعداد الافتراضي قرار لم يتخذه أحد" — كل بناء بالذكاء الاصطناعي يبدو متشابهًا | طاقم تصميم + محرك مضاد للرداءة يكتشف العلامات (خمسة أوزان خط، تدرّج بنفسجي واحد، ثلاثة أزرار) ويصلحها مع أثر مرجعي |
 | [usestrix/strix](https://github.com/usestrix/strix) | أدوات الفحص التقليدية مليئة بالإنذارات الكاذبة | اختبار اختراق آلي لتطبيقك *أنت* مع إثبات عملي لكل ثغرة، ثم إصلاح وإعادة فحص |
 | [SnailSploit/claude-red](https://github.com/SnailSploit/claude-red) | الفحص الآلي لا يتعمق في سطح هجوم بعينه | نحو 78 دليل أمن هجومي (ويب، AD، سحابة، لاسلكي، تطوير ثغرات…) للعمل اليدوي المتعمق في اختبارات **مصرّح بها** فقط |
 | [mjmirza/app-store-compliance](https://github.com/mjmirza/app-store-compliance) | تطبيقات الموبايل تُرفض لنفس الأسباب المتكررة، وكل رفضة تكلّف أسبوعًا | فحص قبل الرفع لـ iOS/Android: أكثر من 125 نمط رفض مربوط بالقاعدة والحل بالضبط، يلتقطها قبل مراجعة App Store / Play |
@@ -71,7 +73,7 @@ npx skills add drbasem/dev-powerpack
 
 ## الشكر والمصادر
 
-هذا المشروع إعادة صياغة وتجميع وليس نسخة. الفضل في الأفكار والأدوات لأصحابها: Addy Osmani (MIT)، Upstash (MIT)، Graphify Labs (Apache-2.0)، 21st.dev (ISC)، فريق Strix (Apache-2.0)، SnailSploit (claude-red، MIT)، و mjmirza (app-store-compliance، رخصة OpenRoots ORA 2.3).
+هذا المشروع إعادة صياغة وتجميع وليس نسخة. الفضل في الأفكار والأدوات لأصحابها: Addy Osmani (MIT)، Upstash (MIT)، Graphify Labs (Apache-2.0)، 21st.dev (ISC)، فريق Strix (Apache-2.0)، SnailSploit (claude-red، MIT)، mjmirza (app-store-compliance، رخصة OpenRoots ORA 2.3)، nextlevelbuilder (ui-ux-pro-max، MIT)، و phazurlabs (sumi، Apache-2.0).
 
 ## المؤلف
 

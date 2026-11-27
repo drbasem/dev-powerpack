@@ -46,6 +46,17 @@ git clone https://github.com/SnailSploit/claude-red ~/.claude/skills/claude-red
 ```
 Installs as its own `claude-red` skill folder; its ~78 playbooks load on demand by trigger. Windows: run in Git Bash. Only use on targets you own or are authorized to test (see references/redteam-claude-red.md).
 
+## UI/UX design intelligence (ui-ux-pro-max + sumi) — no key, optional
+
+```
+# ui-ux-pro-max
+/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
+# sumi
+/plugin marketplace add phazurlabs/sumi
+/plugin install sumi@sumi-marketplace      # then /sumi:start
+```
+Or copy their `.claude/skills/<name>/` folders into `~/.claude/skills/`. See references/ui-ux-design.md.
+
 ## app-store-compliance (mobile release guard) — no key, mobile apps only
 
 ```bash

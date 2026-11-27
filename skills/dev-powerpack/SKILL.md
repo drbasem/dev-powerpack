@@ -1,6 +1,6 @@
 ---
 name: dev-powerpack
-description: Hybrid software-engineering workflow for any coding project. Combines a senior-engineer lifecycle (spec, plan, incremental build, TDD, five-axis review, ship — from addyosmani/agent-skills) with power tools — Context7 for up-to-date library docs, Graphify for a knowledge graph of the codebase, 21st.dev MCP for ready-made UI components, Strix for AI penetration testing, claude-red offensive-security playbooks for authorized red-team/CTF work, and app-store-compliance for catching App Store / Google Play rejections before submitting a mobile app. Use whenever building a feature, starting or planning a project, fixing a bug, writing code against any library or framework, exploring an unfamiliar codebase, building UI/front-end components, reviewing code, hardening security, pentesting or red-teaming your own app, submitting or releasing an iOS/Android app, or preparing to ship. Also trigger on "/spec", "/plan", "/build", "/test", "/review", "/ship", "/pentest", "/redteam", "/appstore", "/compliance", "use context7", "graphify", "21st", "strix", "pentest", "red team", "security scan", "App Store rejection", "Google Play rejection", "mobile app submission".
+description: Hybrid software-engineering workflow for any coding project. Combines a senior-engineer lifecycle (spec, plan, incremental build, TDD, five-axis review, ship — from addyosmani/agent-skills) with power tools — Context7 for up-to-date library docs, Graphify for a knowledge graph of the codebase, 21st.dev MCP for ready-made UI components, ui-ux-pro-max and sumi for UI/UX design intelligence, Strix for AI penetration testing, claude-red offensive-security playbooks for authorized red-team/CTF work, and app-store-compliance for catching App Store / Google Play rejections before submitting a mobile app. Use whenever building a feature, starting or planning a project, fixing a bug, writing code against any library or framework, exploring an unfamiliar codebase, building UI/front-end components, designing or polishing an interface, reviewing code, hardening security, pentesting or red-teaming your own app, submitting or releasing an iOS/Android app, or preparing to ship. Also trigger on "/spec", "/plan", "/build", "/test", "/review", "/ship", "/pentest", "/redteam", "/appstore", "/compliance", "/design", "/polish", "use context7", "graphify", "21st", "strix", "pentest", "red team", "security scan", "App Store rejection", "Google Play rejection", "mobile app submission", "UI/UX", "design system", "make it look better".
 ---
 
 # Dev Powerpack
@@ -22,6 +22,7 @@ One skill that runs a disciplined engineering lifecycle and calls the right tool
    - Context7: MCP tools `resolve-library-id` / `query-docs`, or `ctx7` CLI
    - Graphify: `graphify` CLI, or `graphify-out/graph.json` already in the repo
    - 21st: MCP tools `search` / `get_component` / `generate`
+   - UI/UX design intelligence: `ui-ux-pro-max` and/or `sumi` plugins/skills present
    - Strix: `strix` CLI + Docker running
    - claude-red: `claude-red` skill folder present (offensive-security playbooks, loads by trigger)
    - app-store-compliance (mobile apps only): guard script at `~/repositories/app-store-compliance`, or the `app-store-compliance` skill
@@ -37,6 +38,7 @@ One skill that runs a disciplined engineering lifecycle and calls the right tool
 | "How does X work / where is Y?" in an existing repo | Query the graph before grepping | [graphify.md](references/graphify.md) |
 | Writing code that uses any library/framework/SDK | Fetch current docs first, cite them | [context7.md](references/context7.md) |
 | Building UI (component, page, landing, dashboard) | Search 21st for a component, adapt it to the project | [ui-21st.md](references/ui-21st.md) |
+| Design decisions / UI quality (color, type, spacing, motion, "looks generic") | Apply design intelligence; enforce the hard rules; fix the AI "tells" | [ui-ux-design.md](references/ui-ux-design.md) |
 | Bug / failing test | Reproduce with a test → root cause → fix → regression test | [lifecycle.md § Debug](references/lifecycle.md#debug) |
 | Review a diff / PR | Five-axis review + graph impact check | [lifecycle.md § Review](references/lifecycle.md#6-review-five-axes) |
 | Auth, input handling, payments, APIs, before release | Security checklist, then Strix scan | [security-strix.md](references/security-strix.md) |
@@ -44,7 +46,7 @@ One skill that runs a disciplined engineering lifecycle and calls the right tool
 | Submitting a mobile app to the App Store / Google Play (or after a rejection) | Run the pre-submission guard, clear every critical before release | [mobile-compliance.md](references/mobile-compliance.md) |
 | Ready to release | Ship checklist (mobile: + compliance guard) | [lifecycle.md § Ship](references/lifecycle.md#8-ship) |
 
-Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/review`, `/secure`, `/ship`, `/docs <lib>`, `/graph`, `/ui <what>`, `/pentest` or `/redteam <surface>`, `/appstore` or `/compliance` (mobile) — map each to the matching row above.
+Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/review`, `/secure`, `/ship`, `/docs <lib>`, `/graph`, `/ui <what>`, `/pentest` or `/redteam <surface>`, `/appstore` or `/compliance` (mobile), `/design` or `/polish` (UI/UX) — map each to the matching row above.
 
 ## Non-negotiable behaviors (apply in every phase)
 
@@ -71,4 +73,4 @@ Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/
 
 ## Sources and credits
 
-Condensed and combined from: addyosmani/agent-skills (MIT), upstash/context7 (MIT), Graphify-Labs/graphify (Apache-2.0), 21st-dev/magic-mcp (ISC), usestrix/strix (Apache-2.0), SnailSploit/claude-red (MIT), mjmirza/app-store-compliance (OpenRoots ORA 2.3). See [references/NOTICE.md](references/NOTICE.md).
+Condensed and combined from: addyosmani/agent-skills (MIT), upstash/context7 (MIT), Graphify-Labs/graphify (Apache-2.0), 21st-dev/magic-mcp (ISC), usestrix/strix (Apache-2.0), SnailSploit/claude-red (MIT), mjmirza/app-store-compliance (OpenRoots ORA 2.3), nextlevelbuilder/ui-ux-pro-max-skill (MIT), phazurlabs/sumi (Apache-2.0). See [references/NOTICE.md](references/NOTICE.md).
