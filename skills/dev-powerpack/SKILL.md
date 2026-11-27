@@ -48,6 +48,24 @@ One skill that runs a disciplined engineering lifecycle and calls the right tool
 
 Slash-style shortcuts the user may type: `/spec`, `/plan`, `/build`, `/test`, `/review`, `/secure`, `/ship`, `/docs <lib>`, `/graph`, `/ui <what>`, `/pentest` or `/redteam <surface>`, `/appstore` or `/compliance` (mobile), `/design` or `/polish` (UI/UX) — map each to the matching row above.
 
+## Design routing rule — which part fits which platform
+
+When the task is to design or build the look & feel of an app, **first name the platform** (web, mobile, or desktop) — ask if it isn't obvious — then apply the parts below. The design-intelligence rules (accessibility, type, spacing, motion, "no generic defaults") apply to **all three**; the component source and the release gate differ.
+
+| Step | Web (site / web app / PWA) | Mobile (iOS / Android / Flutter / RN) | Desktop (Electron / Tauri / native) |
+|---|---|---|---|
+| **1. Current docs** — Context7 first | Framework docs (React/Next/Vue/Svelte, Tailwind) | Platform/toolkit docs (Flutter, SwiftUI, Jetpack Compose, RN) | Shell + UI docs (Electron/Tauri, the web or native UI layer it uses) |
+| **2. Components** — 21st | ✅ Primary — web components map directly | ⚠️ Web stacks (RN-web, Ionic, Flutter-web) only; for native, use 21st as **visual inspiration**, translate by hand | ✅ If the UI is web-based (Electron/Tauri); else inspiration only |
+| **3. Design intelligence** — ui-ux-pro-max + sumi | ✅ Full: styles, palettes, type, motion, responsive | ✅ Full, weight the **mobile** rules: touch targets ≥ 44×44px, safe areas, bottom nav ≤ 5, thumb reach, one-hand use | ✅ Full, weight **desktop** rules: denser layout, keyboard shortcuts, menus/toolbars, multi-window, pointer + hover states |
+| **4. Platform hard rules to always honor** | Responsive/mobile-first, no horizontal scroll, don't disable zoom, contrast ≥ 4.5:1, reduced-motion | Touch targets & spacing, safe-area insets, native back behavior, platform conventions (Material vs HIG), dark mode | Window chrome & resize, keyboard-first, native menu/shortcut conventions, HiDPI scaling |
+| **5. Release gate** — before shipping | Ship checklist + Strix (if auth/input/APIs) | Ship checklist + Strix **+ app-store-compliance guard** (mandatory before App Store / Play) | Ship checklist + Strix; code-sign/notarize per OS |
+
+Rules of thumb:
+- **Design intelligence is platform-agnostic; components and the release gate are not.** Never skip steps 3–4 because "it's just desktop/mobile."
+- **21st shines for web.** For native mobile/desktop, treat its output as a reference to re-implement in the platform's own toolkit, not a drop-in.
+- **Mobile adds a hard gate:** the app-store-compliance guard is part of *done* for any iOS/Android submission, not optional polish.
+- **One app, several platforms** (e.g. responsive web + mobile): apply each column, and keep one shared design language (one type scale, one accent, one motion curve) across them.
+
 ## Non-negotiable behaviors (apply in every phase)
 
 1. **Surface assumptions** before non-trivial work: list them, invite correction, then proceed.
